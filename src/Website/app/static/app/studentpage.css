@@ -8,7 +8,7 @@
 }
 
 .dropbtn {
-    background: transparent url(../UniWeb/settings.svg) no-repeat top;
+    background: transparent url(../app/settings.svg) no-repeat top;
     display: inline-block;
     border: 0;
     top: -1.8px;
