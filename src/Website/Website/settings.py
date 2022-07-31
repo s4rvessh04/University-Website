@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+ENVIRONMENT = os.getenv('ENVIRONMENT')
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -139,3 +141,7 @@ REST_FRAMEWORK = {
 }
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(os.getenv('DATABASE_URL') if ENVIRONMENT == 'Production' else '')
