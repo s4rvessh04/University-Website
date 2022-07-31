@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/user_view.css' %}">{% endblock %}
+{% block title%}Teacher's Page{% endblock %}
+{% block nav %}
+<style>
+    body {
+        background: #fff;
+    }
+
+    .navbar {
+        background: #2F363D;
+    }
+</style>
+<a class="navbar-brand" href="{% url 'home' %}">
+    <p class="h6 poppins" style="font-size: 24px;"><i class="fa fa-graduation-cap text-white" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" title="College Home"></i></p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav ms-auto">
+        <div class="dropdown">
+            <button class="my-btn btn p-0 mb-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="{% static 'app/settings-white-24dp.svg' %}" alt="">
+            </button>
+            <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item" href="{% url 'account_settings' %}"><img class="drop-ico"
+                            src="{% static 'app/person-accounts.svg' %}" alt="conference.ico" width="35px" height="35px"
+                            style="margin-right: 0.8rem;">Account Settings<p
+                            style="font-size: 10px;font-family: 'Poppins',sans-serif;font-weight: 500;margin-left: 3.1rem;margin-bottom: 0rem;">
+                            {{obj.email}}</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'profile_view' %}">
+                        <img class="drop-ico" src="{% static 'app/user-profile.svg' %}" alt="conference.ico"
+                            width="35px" height="35px" style="margin-right: 0.8rem;">Profile
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img class="drop-ico" src="{% static 'app/status.svg' %}" alt="conference.ico" width="35px"
+                            height="35px" style="margin-right: 0.8rem;">Set Status
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img class="drop-ico" src="{% static 'app/round-help-button.svg' %}" alt="conference.ico"
+                            width="35px" height="35px" style="margin-right: 0.8rem;">Help
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'logout_view' %}">
+                        <img class="drop-ico" src="{% static 'app/log-out.svg' %}" alt="conference.ico" width="35px"
+                            height="35px" style="margin-right: 0.8rem;">Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<div class="jumbotron d-flex align-items-start min-vh-100">
+    <div class="container-fluid" style="margin-top: 1.5%;">
+        <div class="container-xl">
+            <div class="row border options-card px-2" style="height: fit-content;">
+                <div class="col-xl-8">
+                    <div class="row gx-4 my-lg-2 mb-md-2 my-1 gy-lg-0 gy-2">
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="{% url 'academic-record' %}">
+                                <div class="h6 border p-2 text-center options-card option-pills-white poppins m-0"
+                                    style="font-weight: 600;color: #2F363D;display: flex; align-items: center;justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"
+                                        class="me-2">
+                                        <path
+                                            d="M2.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h3.5a.75.75 0 010 1.5h-3.5A1.75 1.75 0 011 13.25V1.75C1 .784 1.784 0 2.75 0h8a1.75 1.75 0 011.508.862.75.75 0 11-1.289.768.25.25 0 00-.219-.13h-8z">
+                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M8 7a4 4 0 116.49 3.13l.995 4.973a.75.75 0 01-.991.852l-2.409-.876a.25.25 0 00-.17 0l-2.409.876a.75.75 0 01-.991-.852l.994-4.973A3.993 3.993 0 018 7zm4-2.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm0 6.5a4 4 0 001.104-.154l.649 3.243-1.155-.42c-.386-.14-.81-.14-1.196 0l-1.155.42.649-3.243A4 4 0 0012 11z">
+                                        </path>
+                                    </svg>
+                                    Grade Student
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="https://docs.google.com/forms?usp=mkt_forms">
+                                <div class="h6 border p-2 text-center options-card option-pills-white poppins m-0"
+                                    style="font-weight: 600;color: #2F363D;display: flex; align-items: center;justify-content: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"
+                                        class="me-1">
+                                        <path fill-rule="evenodd"
+                                            d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z">
+                                        </path>
+                                    </svg>
+                                    Create Form
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="{% url 'academic-record' %}">
+                                <div class="h6 border p-2 text-center option-pills btn-success bg-gradient options-card poppins m-0"
+                                    style="font-weight: 600;">Extra</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <a href="{% url 'academic-record' %}">
+                                <div class="h6 border p-2 text-center option-pills btn-success bg-gradient options-card poppins m-0"
+                                    style="font-weight: 600;">Extra</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row options-card py-3 mt-md-4 mt-3">
+                <div class="col-md-6 my-color border py-2 px-md-3 border" style="height: 470px;border-radius: 10px;">
+                    <h5 class="poppins mb-3 mt-2" style="color: #2F363D;display: flex; align-items: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20"
+                            fill="#2F363D" class="me-2">
+                            <path fill-rule="evenodd"
+                                d="M.75 3a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H.75zM3 7.75A.75.75 0 013.75 7h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 013 7.75zm3 4a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75z">
+                            </path>
+                        </svg>Quick Filter
+                    </h5>
+                    <form method="GET" action="">
+                        <div class="input-group">
+                            <input type="search" class="form-control border" placeholder="Search Student"
+                                aria-label="Search" aria-describedby="button-addon2" name="q" value="{{request.GET.q}}"
+                                style="border: none;border-radius: 10px 0 0 10px;font-weight: 600;">
+                            <button class="btn btn-light bg-gradient border" type="submit" id="button-addon2"
+                                style="color:#2F363D; border: none; border-radius: 0 10px 10px 0;font-weight: 600;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+                                    <path fill-rule="evenodd"
+                                        d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="overflow-auto mt-3 hidden-scroll" style="height:340px;">
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Name</th>
+                                    <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Branch</th>
+                                    <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for student in student_list %}
+                                <tr>
+                                    <td><span class="h5 inter fs-6 fw-light" style="color: #2F363D;">{{student}}</span>
+                                    </td>
+                                    <td><span class="h5 inter fs-6 fw-light"
+                                            style="color: #2F363D;">{{student.branch}}</span></td>
+                                    <td><a href="{% url 'viewuser_general_view' student.user %}">
+                                            <button type="button"
+                                                class="btn btn-primary bg-gradient btn-sm">View</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-0 ps-md-4 mt-md-0 mt-5">
+                    <div class="options-card border py-2 px-3" style="height: 100%;">
+                        <span><i class="fa fa-bell-o mb-3 mt-2 fw-bold" style="color: #272343b4;font-size: 20px;"
+                                data-bs-toggle="tooltip" data-bs-placement="right" title="Notifications"></i></span><br>
+                        <div class="overflow-auto hidden-scroll" style="height: 400px;width: 100%;">
+                            <div
+                                class="d-lg-flex d-block justify-content-between notification border mt-lg-2 mt-1 p-md-3 p-2">
+                                <span>
+                                    <span class="h5 inter"
+                                        style="font-weight: 600;color: #272343;max-width: inherit;">Sender Name</span>
+                                    <br>
+                                    <span class="h6 inter text-muted" style="font-weight: 400;">11th Feb 2021
+                                        6:02pm</span>
+                                </span>
+                                <div class="btn-group-sm mt-2 mt-0">
+                                    <button type="button" class="btn btn-primary bg-gradient notification-btn poppins"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
+                                    <button type="button"
+                                        class="btn btn-danger bg-gradient notification-btn poppins">Delete</button>
+                                </div>
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title poppins" id="exampleModalLabel"
+                                                    style="color: #272343;">Message</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body inter" style="color: #272343;">
+                                                <p class="fs-6">This is a message,sed quia non numquam eius modi tempora
+                                                    incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button"
+                                                    class="message-btn btn btn-outline-primary bg-gradient">Reply</button>
+                                                <button type="button"
+                                                    class="message-btn btn btn-outline-danger bg-gradient"
+                                                    data-bs-dismiss="modal">Dismiss</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

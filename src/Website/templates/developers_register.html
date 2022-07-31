@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">{% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/developers_register.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/footer.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'app/home.png' %}">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <title>API|Registration</title>
+</head>
+
+<body>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <div class="container-lg">
+        <div class="my-form">
+            <p class="heading-api-registration">Registration Form</p>
+            <h6 class="text-center text-black-50 mb-4 fw-light">All it takes is an email.</h6>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                <div class="alert alert-info" role="alert" style="margin: 1vmin 0;">
+                    <strong>{{message}}</strong><br>
+                    <a href="{% url 'api_docs_view' %}" class="redirect-link-docs text-primary">Read Docs -></a>
+                </div>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                <div class="alert alert-warning" role="alert" style="margin: 1vmin 0;">{{message}}</div>
+                {% else %}
+                <div class="alert alert-danger" role="alert" style="margin: 1vmin 0;">
+                    {{form.errors}}
+                    {{message}}<br>
+                    <a href="#terms" class="redirect-link-docs text-primary">Read Terms -></a>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="form-floating mb-3">
+                    {{form.email}}
+                    <label for="floatingInput"
+                        class="developer-register-form-label text-muted">{{form.email.label}}</label>
+                </div>
+                <div class="form-floating d-flex justify-content-center" style="margin-bottom: 2vmin;">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </form>
+            <div class="form-floating d-flex justify-content-center">
+                <a class="btn btn-outline-light" href="{% url 'developers_view' %}"
+                    style="font-size: 18px;font-family: 'Inter', sans-serif;border-radius: 50%;">
+                    <- </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

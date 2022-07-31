@@ -1,0 +1,173 @@
+a {
+    text-decoration: none;
+}
+.navbar {
+    background: transparent;
+}
+.top-fluid-container {
+    border-radius: 2vmin;
+    margin: 0 2%;
+    margin-top: 8.7vmin;
+    background: linear-gradient(rgba(110, 255, 191, 1), rgba(110, 255, 191, 0));
+}
+.my-content-container {
+    margin-top: 297px;
+}
+.glass-container {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2vmin;
+}
+.hero-heading {
+    padding-top: 6.8%;
+    text-align: center;
+}
+.gradient-heading {
+    font-size: 5.4vmin;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background: -webkit-linear-gradient(0deg, rgba(21, 94, 99, 1), rgba(21, 94, 99, 0.7));
+    -webkit-background-clip: text;
+    background-clip: none;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.heading-text-normal {
+    font-size: 2.2vmin;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #76B39D;
+    text-align: center;
+    padding: 2% 5%;
+}
+.small-cards-all {
+    margin-top: 10%;
+}
+.small-cards {
+    height: 20.4vmin;
+    width: 20.5vmin;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.st-main {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 3.4vmin;
+    color: rgba(24, 77, 71, 0.8);
+    padding: 2% 0;
+}
+.st-sub {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 3.4vmin;
+    color: rgba(82, 222, 151, 1);
+}
+.wide-card-main {
+    margin-top: 9vmin;
+    height: 17.9vmin;
+}
+.wide-cards {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.sub-content-container {
+    border-radius: 2vmin;
+    margin: 0 2%;
+    margin-top: 9vmin;
+    margin-bottom: 41.2vmin;
+}
+.medium-inter {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2.2vmin;
+    color: #76B39D;
+}
+.redirect-link {
+    margin-top: 4vmin;
+    width: fit-content;
+    width: 20vmin;
+    height: 6vmin;
+    border-radius: 2vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.redirect-link-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2.2vmin;
+    color: #0085FF;
+}
+
+.sub-gradient-text {
+    font-size: 5.4vmin;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    background: -webkit-linear-gradient(0deg, rgba(21, 94, 99, 0.5), rgba(21, 94, 99, 0.7));
+    -webkit-background-clip: text;
+    background-clip: none;
+    -webkit-text-fill-color: transparent;
+}
+.image-container-fix {
+    height: 58vmin;
+    width: 93vmin;
+}
+.image-container-fix>img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.image-companion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 10%;
+}
+.my-content-container-2 {
+    padding: 0 2%;
+    margin-bottom: 42.9vmin;
+}
+.thick-gradient-line {
+    background: linear-gradient(to right bottom, rgba(21, 94, 99, 0.6), rgba(21, 94, 99, 0.4));
+    height: 1vmin;
+    border-radius: 2vmin;
+    margin-top: 4vmin;
+}
+.wide-card-small {
+    border-radius: 2vmin;
+    margin-top: 2.6vmin;
+}
+.wide-card-items {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4%;
+}
+.st-main-small {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2.2vmin;
+    color: rgba(118, 179, 157, 1);
+}
+.st-sub-small {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 2.2vmin;
+    color: rgba(82, 222, 151, 1);
+}
+.open-postions-description {
+    display: flex;
+    justify-content: space-between;
+}
+.open-postions-card-content {
+    padding: 10px 20px;
+}
+.open-postions-card-link {
+    padding: 0 4vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

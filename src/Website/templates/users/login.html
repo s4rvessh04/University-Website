@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/login_page.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <title>Sign In</title>
+</head>
+
+<body>
+    <div class="container-fluid" style="display: flex;height: 100vh;align-items: center;justify-content: center;">
+        <div class="container_main">{% load static %}
+            <img src="{% static 'app/unicap.svg' %}" class="unicaplogo" alt="Search glass" width="72.8px"
+                height="71.2px">
+            <h1>Log in Portal</h1>
+            {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}<p id="error">{{message}}</p>
+            {% else %}<p id="flash_message">{{message}}</p>
+            {% endif %}
+            {% endfor %}
+            <form method="POST" style="display: block;">
+                {% csrf_token %}
+                <label>Email Address</label>
+                <input class="input_box" name="email">
+                <label>Password<a href="#" id="forgotpass">Forgot Password?</a></label>
+                <input class="input_box" type="password" name="password">
+                <input id="login_btn" type="submit" value="Log In">
+            </form>
+            <a id="contactadmin" href="#">Contact Administrator</a>
+        </div>
+    </div>
+</body>
+
+</html>

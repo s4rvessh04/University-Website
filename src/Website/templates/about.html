@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% load static %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'home' %}" style="opacity: 0.8;">
+    <p class="h6 poppins" style="font-size: 24px;"><i class="fa fa-graduation-cap"></i></p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item pe-1">
+            <a class="nav-link" aria-current="page" href="{% url 'placements_view' %}">
+                <p class="h6 poppins">Placements</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'admissions_view' %}">
+                <p class="h6 poppins">Admissions</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'campus_view' %}">
+                <p class="h6 poppins">Campus</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link active" href="{% url 'about_view' %}" aria-current="page">
+                <p class="h6 poppins">About</p>
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li>
+            <a href="{% url 'login_view' %}">
+                <button class="btn btn-primary bg-gradient" type="button" style="border-radius: 0.5rem;">
+                    <p class="h6 poppins m-0" style="font-weight: 600;">Sign In</p>
+                </button>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<style>
+    .glass {
+        background: white;
+        background:linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+        border-radius: 1rem;
+    }
+    body {
+        background: linear-gradient(to right bottom, #b5ffed, #c1fef0, #cdfdf3, #d8fbf5, #e4faf6);
+    }
+    .navbar {
+        background: transparent;
+    }
+    .card-headings {
+        font-size: 3.6vmin;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        color: rgba(84, 84, 84, 0.9);
+    }
+    .card-sub-headings {
+        font-size: 2.2vmin;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        color: rgba(106, 106, 106, 0.8);
+    }
+</style>
+<section>
+    <div class="container-fluid pt-4 px-3" style="height:650px;height: 96vh;padding-bottom: 10%;">
+        <div class="flex-md-column d-md-flex justify-content-md-evenly" style="height: 100%;">
+            <div class="container-xl py-2" style="height: fit-content;text-align: center;">
+                <span style="font-size: 4.7vmin;font-family: 'Poppins', sans-serif;font-weight: 700;color: #545454;">
+                    <span style="background: -webkit-linear-gradient(rgba(255, 240, 109, 1), rgba(239, 147, 8, 1));-webkit-background-clip: text;background-clip: none;-webkit-text-fill-color: transparent;">Making students a better person<br>and college a better place</span>
+                </span>
+                <br>
+                <br>
+                <span style="font-size: 2.3vmin;font-family: 'Poppins', sans-serif;font-weight: 500;color: #6A6A6A;">Offering students various Engineering, Medical and Law courses with a habitable environment for all their needs.</span>
+            </div>
+            <div class="container-xl flex-md-column justify-content-center mt-md-0 mt-4">
+                <div class="row py-2 px-2" style="border-radius: 1rem;background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.4));height: fit-content;">
+                    <div class="col-lg-4 col-md-6" style="display:flex;flex-direction: column;justify-content: center;">
+                        <div class="px-2 py-3" style="text-align: center;">
+                            <span class="card-headings">2000</span><br>
+                            <span class="card-sub-headings">Year of establishment</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6" style="display:flex;flex-direction: column;justify-content: center;">
+                        <div class="px-2 py-3" style="text-align: center;">
+                            <span class="card-headings">Pune</span><br>
+                            <span class="card-sub-headings">Based</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12" style="display:flex;flex-direction: column;justify-content: center;">
+                        <div class="px-2 py-3" style="text-align: center;">
+                            <span class="card-headings">A<sup>+</sup></span><br>
+                            <span class="card-sub-headings">NAAC accreditation grade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid my-container-fluid pb-0 mb-0 justify-content-center">
+        <footer class="container-xl">
+            <div class="row my-4 justify-content-center py-5">
+                <div class="col-11">
+                    <div class="row">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                            <h3 class="footer-h3 text-muted mb-md-0 mb-5 bold-text">College Name</h3>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="footer-h6 mb-3 mb-lg-4 bold-text text-muted"><b>QUICK LINKS</b></h6>
+                            <ul class="list-unstyled footer-ul">
+                                <a class="footer-a footer-menu-links" href="{% url 'home' %}">
+                                    <li>Home</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'careers_view' %}">
+                                    <li>Careers</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'developers_view' %}">
+                                    <li>Developers</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'about_view' %}">
+                                    <li>About</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="footer-h6 mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                            <p class="footer-p mb-1">605, RATAN ICON BUILDING</p>
+                            <p class="footer-p">SEAWOODS SECTOR</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                            <p class="footer-p social text-muted mb-0 pb-0 bold-text">
+                                <span class="mx-2" onclick="window.location='#facebook_link'" style="cursor: pointer;"><i
+                                        class="fa fa-facebook" aria-hidden="true" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Visit our Facebook page"></i></span>
+                                <span class="mx-2" onclick="window.location='#linkedIn_link'" style="cursor: pointer;"><i
+                                        class="fa fa-linkedin-square" aria-hidden="true" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Visit our LinkedIn"></i></span>
+                                <span class="mx-2" onclick="window.location='#twitter_link'" style="cursor: pointer;"><i
+                                        class="fa fa-twitter" aria-hidden="true" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Visit our Twitter"></i></span>
+                                <span class="mx-2" onclick="window.location='#instagram_link'" style="cursor: pointer;"><i
+                                        class="fa fa-instagram" aria-hidden="true" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Visit our Instagram"></i></span>
+                            </p>
+                            <small class="rights">
+                                <span>&#174;</span>
+                                All Rights Reserved.
+                                <br>
+                                Made with <i class="fa fa-coffee" aria-hidden="true"></i> by Sarvesh Rane.
+                            </small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                            <h6 class="footer-h6 mt-55 mt-2 text-muted bold-text"><b>COLLEGE EMAIL</b></h6><small><span><i
+                                        class="fa fa-envelope" aria-hidden="true"></i>email@gmail.com</span></small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end ">
+                            <h6 class="footer-h6 text-muted bold-text"><b>CONTACT NUMBER</b></h6><small><span><i
+                                        class="fa fa-phone" aria-hidden="true"></i></span>1234567890</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</section>
+{% endblock %}
+

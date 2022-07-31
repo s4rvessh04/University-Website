@@ -1,0 +1,109 @@
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+.inter {
+    font-family: 'Inter', sans-serif;
+}
+.dosis {
+    font-family: 'Dosis', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.main-heading {
+    /* font-size: 48px; */
+    font-size: 4.8vmin;
+    font-weight: 600;
+    color: #545454;
+    text-align: center;
+    margin-top: 77px;
+
+}
+.sub-heading {
+    /* font-size: 24px; */
+    font-size: 2.4vmin;
+    font-weight: 500;
+    color: #6A6A6A;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.sub-heading-position {
+    width: 77%;
+}
+.my-row-small-border {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.card {
+    padding: 1vmin;
+    margin: 2vmin 2vmin;
+}
+.card-title {
+    /* font-size: 18px; */
+    font-size: 1.8vmin;
+    font-weight: 500;
+    color: #545454;
+}
+.card-text {
+    /* font-size: 18px; */
+    font-size: 1.8vmin;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #545454;
+}
+.large-card {
+    margin-top: 20px;
+}
+.card-hyperlink {
+    font-weight: 500;
+    /* font-size: 24px; */
+    font-size: 2.4vmin;
+    height: 100%;
+    color: #545454;
+}
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 174px;
+    text-align: center;
+    color: #545454;
+}
+.card-vertical-group {
+    height: 760px;
+    margin: 0 2vmin;
+    margin-top: 40px;
+    padding: 0 1vmin;
+    margin-bottom: 212px;
+}
+.open-job-tab {
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-color {
+    color: #0085FF;
+    font-weight: 600;
+    font-size: inherit;
+}
+.careers-form-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.8vmin;
+    color: #ADB5BD;
+}
+.form-control {
+    /* border-radius: 10px; */
+    border-radius: 1vmin;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+.my-form {
+    /* margin-top: 50px; */
+    margin-top: 5vmin;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/login_page.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Source+Sans+Pro:wght@300;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'app/admin_dash.png' %}">
+    <title>Register</title>
+</head>
+<style>
+    body {
+        margin: 1vmin 8vmin;
+    }
+
+    .my-container {
+        height: 96vh;
+    }
+
+    .form-check-input {
+        padding: 9px;
+        margin-right: 9px;
+    }
+</style>
+
+<body>
+    <div class="container-md my-container mt-4 px-3">
+        <h2>Registration Form</h2>
+        <ul class="list-group">
+            {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <li class="list-group-item list-group-item-danger" style="font-size: .8rem; text-align: center;">{{message}}
+            </li>
+            {% else %}
+            <li class="list-group-item list-group-item-success" style="font-size: .8rem; text-align: center;">
+                {{message}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+
+        {% if form.errors %}
+        <ul class="list-group">
+            {% for field in form %}
+            {% for error in field.errors %}
+            {% if error != 'This field is required.' %}
+            <li class="list-group-item list-group-item-danger" style="font-size: .8rem; text-align: center;">{{
+                error|escape }}</li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form method="POST" action=""
+            style="top: 7%; background-color: #E3F6F5;padding: 1.5rem 1.5rem 1rem 1.5rem ;border-radius: 10px;">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+                {{form.name}}
+                <label for="floatingInput">{{form.name.label}}</label>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        {{form.username}}
+                        <label for="floatingInput">{{form.username.label}}</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        {{form.phone}}
+                        <label for="floatingInput">{{form.phone.label}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                {{form.email}}
+                <label for="floatingInput">{{form.email.label}}</label>
+            </div>
+            <div class="form-floating mb-3">
+                {{form.branch}}
+                <label for="floatingInput">{{form.branch.label}}</label>
+            </div>
+            <div class="form-floating mb-3">
+                {{form.password1}}
+                <label for="floatingInput">Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                {{form.password2}}
+                <label for="floatingInput">Confirm Password</label>
+            </div>
+            <div class="form-check">
+                {{form.is_teacher}}
+                <label class="form-check-label" for="flexCheckDefault">
+                    Teacher
+                </label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit" style="margin-bottom: .5rem;">
+        </form>
+    </div>
+</body>
+
+</html>

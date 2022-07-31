@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">{% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/api_documentation.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'app/home.png' %}">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <title>API | Docs</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100 flex-column flex-md-row">
+            <aside class="col-12 col-lg-3 col-md-3 col-xl-2 p-0 bg-light flex-shrink-1">
+                <nav class="navbar sticky-top navbar-expand-md navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#nav" aria-controls="nav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse flex-column" id="nav">
+                            <ul class="nav flex-column nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-graduation-cap"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Home"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link list-group-item-action" href="#GetStarted">Get Started</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link list-group-item-action" href="#Basics">Basics</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link list-group-item-action" href="#Tokens">Tokens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link list-group-item-action" href="#Querying">Querying</a>
+                                    <a href="#QueryFields" class="nav-link list-group-item-action lead">
+                                        <p class="my-0"><i>Query Fields</i></p>
+                                    </a>
+                                    <ul class="lead" style="list-style: '- ';font-size: 1.1rem;">
+                                        <li class="list-group-item-action p-1"><a href="#academic-list"
+                                                style="font-size: inherit;font-weight: unset;color: initial;"><i>academic-list</i></a>
+                                        </li>
+                                        <li class="list-group-item-action p-1"><a href="#my-academics"
+                                                style="font-size: inherit;font-weight: unset;color: initial;"><i>my-academics</i></a>
+                                        </li>
+                                        <li class="list-group-item-action p-1"><a href="#my-student-profile"
+                                                style="font-size: inherit;font-weight: unset;color: initial;"><i>my-student-profile</i></a>
+                                        </li>
+                                        <li class="list-group-item-action p-1"><a href="#account-details"
+                                                style="font-size: inherit;font-weight: unset;color: initial;"><i>account-details</i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link list-group-item-action" href="#Links">Links</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+            <main class="col px-0 flex-grow-1 overflow-auto" style="height: 100vh;">
+                <div class="container-fluid py-3">
+                    <article id="GetStarted">
+                        <h1 class="display-3"><b>Get Started</b></h1>
+                        <h5 class="mt-3">Welcome developer</h5>
+                        <h6>
+                            In order to use this api you need to register to our
+                            <a href="{% url 'developers_register_view' %}" class="text-primary links">developers program
+                                -></a>
+                        </h6>
+                    </article>
+                    <hr>
+                    <article class="mt-5" id="Basics">
+                        <h4 class="display-5"><b>Basics</b></h4>
+                        <p class="lead">The bare minimum to get you started.</p>
+                        <ul class="mt-2">
+                            <li class="mt-1">Install "requests library", run <code>pip install requests</code> on
+                                console.</li>
+                            <li class="mt-1">Create a file named <u>api.py</u></li>
+                            <li class="mt-1">Make imports.
+                                <br>
+                                <code>import request</code>
+                                <br>
+                                <code>import json</code>
+                                <br>
+                                <code>from pprint import pprint</code>
+                            </li>
+                            <li class="mt-1">
+                                Make attributes for api as
+                                <br>
+                                <code>headers = {}</code>
+                                <br>
+                                <code>params = {}</code>
+                            </li>
+                        </ul>
+                    </article>
+                    <hr>
+                    <article class="mt-5" id="Tokens">
+                        <h4 class="display-5"><b>Tokens</b></h4>
+                        <p class="lead">Authentication requirement.</p>
+                        <ul class="mt-2">
+                            <li>Paste your token in <code>headers</code></li>
+                            <li>It should look like <code>headers = {'Authorization': 'Token your-token-here'}</code>
+                            </li>
+                        </ul>
+                        <p><b>NOTE: </b>There must be a whitespace between Token and your-token</p>
+                    </article>
+                    <hr>
+                    <article class="mt-5" id="Querying">
+                        <h4 class="display-5"><b>Querying</b></h4>
+                        <p class="lead">Getting data from the api.</p>
+                        <p>For making a query to api, pass the query field along with the query in
+                            <code>params</code><br>
+                            <i>Example:</i> <code>params = {'query_field':'query'}</code>
+                        </p>
+                        <h2 id="QueryFields">Query Fields</h2>
+                        <p>
+                            The only link on which you can query data is <b>academic-list</b>.
+                            <br>
+                            To query certain student, subject or semester:
+                        <ul>
+                            <li>For student: <code>'student__name'</code></li>
+                            <li>For subject: <code>'subject__name'</code></li>
+                            <li>For semester: <code>'semester__name'</code></li>
+                        </ul>
+                        </p>
+                        <p><b>NOTE: </b><i>The query must be case sensitive.</i></p>
+                        <p class="text-start">
+                            <i>Example:</i> If you want to query a student then
+                            <code>params = {'student__name': 'FirstName MiddleName LastName'}</code>
+                            <b>With the whitespace.</b>
+                        </p>
+                    </article>
+                    <hr>
+                    <article class="mt-5" id="Links">
+                        <h4 class="display-5"><b>Links</b></h4>
+                        <p class="lead">User accessable links.</p>
+                        <p>To get all accessible links. Use this link <code> {{ link_link }}</code>.
+                            It is suggested to use a dictionary to hardcode this link in your python file.
+                            <br>
+                            Like <code>API_URLS = {'links': '{{link_link}}'}</code>
+                        </p>
+                        <h2 id="academic-list">academic-list</h2>
+                        <p>It will return all students academic data.</p>
+                        Fields Include
+                        <ul class="mt-2">
+                            <li><code>id</code></li>
+                            <li><code>student</code></li>
+                            <li><code>semester</code></li>
+                            <li><code>subject</code></li>
+                            <li><code>marks</code></li>
+                        </ul>
+                        <p><b>NOTE: </b><i>This object will also contain your data. But if you want to see your academic
+                                record use the next field.</i></p>
+                        <br>
+                        <h2 id="my-academics">my-academics</h2>
+                        <p>It will return academic data related to you.</p>
+                        <p><i>Fields are the same as academic-list.</i></p>
+                        <br>
+                        <h2 id="my-student-profile">my-student-profile</h2>
+                        <p>It will return your student profile data.</p>
+                        Fields Include
+                        <ul class="mt-2">
+                            <li><code>id</code></li>
+                            <li><code>branch</code></li>
+                            <li><code>name</code></li>
+                            <li><code>phone</code></li>
+                        </ul>
+                        <br>
+                        <h2 id="account-details">account-details</h2>
+                        <p>It will return all the account related details.</p>
+                        Fields Include
+                        <ul class="mt-2">
+                            <li><code>id</code></li>
+                            <li><code>username</code></li>
+                            <li><code>date_joined</code></li>
+                            <li><code>email</code></li>
+                            <li><code>api_token</code></li>
+                        </ul>
+                    </article>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="{% static 'app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+</body>
+
+</html>

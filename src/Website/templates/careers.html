@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/careers.css' %}">{% endblock %}
+{% block title %}Careers{% endblock %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'home' %}">
+    <p class="h6 poppins text-white" style="font-size: 24px;"><i class="fa fa-graduation-cap"></i></p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item pe-1">
+            <a class="nav-link" aria-current="page" href="{% url 'placements_view' %}">
+                <p class="h6 poppins text-white">Placements</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'admissions_view' %}">
+                <p class="h6 poppins text-white">Admissions</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'campus_view' %}">
+                <p class="h6 poppins text-white">Campus</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'about_view' %}" aria-current="page">
+                <p class="h6 poppins text-white">About</p>
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li>
+            <a href="{% url 'login_view' %}">
+                <button class="btn btn-primary bg-gradient" type="button" style="border-radius: 0.5rem;">
+                    <p class="h6 poppins m-0" style="font-weight: 600;">Sign In</p>
+                </button>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<style>
+    body {
+        background: #ffffff;
+    }
+
+    .navbar {
+        background: #2F363D;
+    }
+</style>
+<div class="container-fluid">
+    <div class="container-lg main-heading poppins">
+        <span>Help us make world a better place</span>
+    </div>
+    <div class="container-lg sub-heading inter">
+        <div class="sub-heading-position">
+            <span>We want our students to unlock their full potentials and succeed in various fields. And we want the
+                mentors, the minds and people to make it happen.</span>
+        </div>
+    </div>
+    <div class="container-lg" style="margin-top: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 col-12 p-0 small-card">
+                <div class="card my-row-small-border">
+                    <div class="card-body">
+                        <span class="card-title inter">A safe work environment</span>
+                        <p class="card-text inter p-0">A better and safe workplace for us means, diversity, integrity
+                            and honesty amongst each other.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 p-0 small-card">
+                <div class="card my-row-small-border">
+                    <div class="card-body">
+                        <span class="card-title inter">People as one</span>
+                        <p class="card-text inter p-0">Here at College / Institute we give equal opportunities to
+                            everyone. We also conduct special staff gatherings to connect with each others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 col-12 p-0 small-card">
+                <div class="card my-row-small-border">
+                    <div class="card-body">
+                        <span class="card-title inter">Health benifits</span>
+                        <p class="card-text inter p-0">We put your health as our top most priority. With coverage for
+                            health checkups, dental checkup etc, and special medical leaves.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 p-0 small-card">
+                <div class="card my-row-small-border">
+                    <div class="card-body">
+                        <span class="card-title inter">Keep growing</span>
+                        <p class="card-text inter p-0">Learn how you learn best. With some of the most brilliant minds
+                            with us, we will help you achieving development goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-0 large-card">
+            <div class="col-lg-6 col-md-12 col-6 p-0">
+                <div class="card my-0 me-0" style="border-radius: 20px 0 0 20px;text-align: center;">
+                    <div class="card-body">
+                        <a href="#open_positions" class="card-title poppins card-hyperlink">Open Positions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-6 p-0">
+                <div class="card my-0 ms-0" style="border-radius: 0 20px 20px 0;text-align: center;">
+                    <div class="card-body">
+                        <a href="#internships" class="card-title poppins card-hyperlink">Internships</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg p-0" id="open_positions">
+        <div class="poppins title">Open Positions</div>
+        <div class="row p-0 card-vertical-group">
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">Software Engineer</span><br>
+                    <span class="card-text inter p-0">Senior</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Proficiency in Python, Java, Kotlin and C++ with
+                        minimum of 7yrs of experience.</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">Full Stack Engineer</span><br>
+                    <span class="card-text inter p-0">Junior</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Proficiency in MERN stack with minimum of 2yrs of
+                        experience.</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">ML Engineer</span><br>
+                    <span class="card-text inter p-0">Senior</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Proficiency in Python[SciKit, Pandas and
+                        TensorFlow], Java, with minimum of 10yrs of experience</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">UI/UX Engineer</span><br>
+                    <span class="card-text inter p-0">Junior</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Proficiency in JS(React), HTML and CSS with minimum
+                        of 2yrs of experience</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">Teacher</span><br>
+                    <span class="card-text inter p-0">Senior</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Proficiency in teaching engineering topics with an
+                        engineering degree and experience at least 3yrs.</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">Staff</span><br>
+                    <span class="card-text inter p-0">Any</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Should know MS Suit and to communicate better and
+                        get things done efficiently and in time.</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+            <div class="col-12 open-job-tab my-row-small-border">
+                <div class="open-postions-card-content">
+                    <span class="card-title inter" style="font-weight: 500;">Sports Instructor</span><br>
+                    <span class="card-text inter p-0">Any</span><br>
+                    <span class="inter" style="font-size: 1.6vmin;">Should know all the things related to sports.
+                        (Cricket and Football is a must)</span>
+                </div>
+                <div class=" open-postions-card-link d-flex align-items-center">
+                    <a href="#" class="inter text-primary" style="font-weight: 500;font-size: 1.8vmin;">Apply -></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg p-0" id="internships" style="margin-bottom: 180px;">
+        <div class="poppins title">Internships</div>
+        <div class="container-lg sub-heading inter">
+            <div class="sub-heading-position">
+                <span>We love to watch the our inters gain real world experience and get the gist of working at an
+                    institutional level.<br><a class="link-color inter" href="{% url 'about_view' %}">Get to know us
+                        better -></a></span>
+            </div>
+        </div>
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <div class="alert alert-warning" role="alert" style="margin: 1vmin 0;">
+            {{message}}
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert" style="margin: 1vmin 0;">
+            {{message}}
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="my-form my-3">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    {{form.email}}
+                    <label for="floatingInput" class=" careers-form-label">{{form.email.label}}</label>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            {{form.phone}}
+                            <label for="floatingInput" class=" careers-form-label">{{form.phone.label}}</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            {{form.location}}
+                            <label for="floatingInput" class=" careers-form-label">{{form.location.label}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    {{form.qualificationAndqueries}}
+                    <label for="floatingInput"
+                        class=" careers-form-label">{{form.qualificationAndqueries.label}}</label>
+                </div>
+                <div class="form-floating d-flex justify-content-center" style="margin-bottom: 40px;">
+                    <input type="submit" class="btn btn-primary inter" value="Submit ->" style="font-weight: 500;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid my-container-fluid pb-0 mb-0 justify-content-center">
+    <footer class="container-xl">
+        <div class="row my-4 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="footer-h3 text-muted mb-md-0 mb-5 bold-text">College Name</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="footer-h6 mb-3 mb-lg-4 bold-text text-muted"><b>QUICK LINKS</b></h6>
+                        <ul class="list-unstyled footer-ul">
+                            <a class="footer-a footer-menu-links" href="{% url 'home' %}">
+                                <li>Home</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'careers_view' %}">
+                                <li>Careers</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'developers_view' %}">
+                                <li>Developers</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'about_view' %}">
+                                <li>About</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="footer-h6 mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="footer-p mb-1">605, RATAN ICON BUILDING</p>
+                        <p class="footer-p">SEAWOODS SECTOR</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="footer-p social text-muted mb-0 pb-0 bold-text">
+                            <span class="mx-2" onclick="window.location='#facebook_link'" style="cursor: pointer;"><i
+                                    class="fa fa-facebook" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Facebook page"></i></span>
+                            <span class="mx-2" onclick="window.location='#linkedIn_link'" style="cursor: pointer;"><i
+                                    class="fa fa-linkedin-square" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our LinkedIn"></i></span>
+                            <span class="mx-2" onclick="window.location='#twitter_link'" style="cursor: pointer;"><i
+                                    class="fa fa-twitter" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Twitter"></i></span>
+                            <span class="mx-2" onclick="window.location='#instagram_link'" style="cursor: pointer;"><i
+                                    class="fa fa-instagram" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Instagram"></i></span>
+                        </p>
+                        <small class="rights">
+                            <span>&#174;</span>
+                            All Rights Reserved.
+                            <br>
+                            Made with <i class="fa fa-coffee" aria-hidden="true"></i> by Sarvesh Rane.
+                        </small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="footer-h6 mt-55 mt-2 text-muted bold-text"><b>COLLEGE EMAIL</b></h6><small><span><i
+                                    class="fa fa-envelope" aria-hidden="true"></i>email@gmail.com</span></small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end ">
+                        <h6 class="footer-h6 text-muted bold-text"><b>CONTACT NUMBER</b></h6><small><span><i
+                                    class="fa fa-phone" aria-hidden="true"></i></span>1234567890</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

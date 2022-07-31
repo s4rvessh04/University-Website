@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/profile.css' %}">{% endblock %}
+{% block title %}Profile | {{request.user|upper}}{% endblock %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'user_view' %}">
+    <p class="h6 poppins text-white" style="font-size: 24px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="#fff">
+            <path fill-rule="evenodd"
+                d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z">
+            </path>
+        </svg>
+        <span class="fs-5">Back</span>
+    </p>
+</a>
+{% endblock %}
+{% block content %}
+<div class="jumbotron d-flex align-items-start min-vh-100">
+    <div class="container-fluid" style="margin-top: 1.5%;">
+        <div class="container-xl">
+            <div class="row justify-content-center">
+                <div class="col-md-7 border my-border px-3 py-2">
+                    <div class="row">
+                        <div class="col-11">
+                            <p class="h6 poppins field-description mt-md-3 mt-2">Name: <span
+                                    class="field-main">{{name}}</span></p>
+                            <p class="h6 poppins field-description mt-3">Username: <span
+                                    class="field-main">{{user}}</span></p>
+                            <p class="h6 poppins field-description mt-3">Email: <span
+                                    class="field-main">{{email}}</span></p>
+                            <p class="h6 poppins field-description mt-3">Account type: <span
+                                    class="field-main">{{account_type}}</span></p>
+                            {% if branch %}
+                            <p class="h6 poppins field-description mt-3">Branch: <span
+                                    class="field-main">{{branch}}</span></p>
+                            {% endif %}
+                            <p class="h6 poppins field-description mt-3">Date Joined: <span
+                                    class="field-main">{{user.date_joined.date}}</span></p>
+                            <a href="{% url 'account_settings' %}">
+                                <p class="inter h6 fw-light mt-3">To change username or password -></p>
+                            </a>
+                        </div>
+                        <div class="col-1 p-1 fs-2" style="height: fit-content;font-size: 24px;font-size: unset;">
+                            {% if 'ENTC' in branch %}
+                            <div class="mt-3"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+                            {% elif 'Mechanical' in branch %}
+                            <div class="mt-3"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+                            {% elif 'Computer Science' in branch %}
+                            <div class="mt-3"><i class="fa fa-terminal" aria-hidden="true"></i></div>
+                            {% elif 'IT' in branch %}
+                            <div class="mt-3"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+                            {% elif account_type == 'teacher' %}
+                            <div class="mt-3"><i class="fa fa-user" aria-hidden="true"></i></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if account_type != 'teacher' %}
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-7 border my-border px-3 py-2">
+                    {% if token %}
+                    <p class="h6 poppins field-description mt-md-3 mt-2">API key: <span
+                            class="field-main">{{token}}</span></p>
+                    <a href="{% url 'api_docs_view' %}" class="inter h6 fw-light mt-3">Visit Docs -></a>
+                    <p class="fs-6 inter mt-4 fw-light text-black-50">Kindly Do Not Share your api key with anybody.</p>
+                    {% else %}
+                    <p class="h6 poppins field-description mt-md-3 mt-2">API key: <span
+                            class="field-main">{{token}}</span></p>
+                    <p class="inter mt-4"><span class="fw-regular">Note:</span><span class="fw-bold"> API key is
+                            displayed only if you have enrolled for the devloper program.</span></p>
+                    <a href="{% url 'developers_view' %}" class="inter h6 fw-light mt-3">More info -></a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

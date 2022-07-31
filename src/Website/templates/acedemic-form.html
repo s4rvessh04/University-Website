@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">{% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <title>Create Academic Record</title>
+</head>
+
+<body>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        label {
+            margin-right: .4rem;
+        }
+
+        select {
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+
+        input {
+            margin-right: 1rem;
+            font-weight: 600;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right bottom, #CAFCEF, #A8F1E2);
+        }
+
+        .glass {
+            background: white;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+            border-radius: 1rem;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+    </style>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+        <div class="container-fluid px-xl-5 pt-1">
+            <a class="navbar-brand" href="{% url 'user_view' %}">
+                <p class="h6 fw-bold" style="font-size: 24px;color: #24294E">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="#24294E">
+                        <path fill-rule="evenodd"
+                            d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z">
+                        </path>
+                    </svg>
+                    <span class="fs-5">Back</span>
+                </p>
+            </a>
+        </div>
+    </nav>
+    <h4 style="font-family: 'Poppins', sans-serif;font-weight: 600;" class="text-center mb-4">Academic Form</h4>
+    <div class="container-fluid" style="padding: 0;display: flex;justify-content: center;align-items: center;">
+        <div class="container glass" style="height: 80vh;">
+            <div class="row row-cols-lg-auto g-3 justify-content-center" style="margin-bottom: 0;">
+                <form action="" method="GET">
+                    <div class="form-floating" style="font-family: 'Poppins', sans-serif;font-weight: 600;">
+                        {% for form in myfilter.form %}
+                        {{form}}
+                        <label for="floatingSelect" style="margin-left: 0;">{{form.label}}</label>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+            <div class="row row-cols-lg-auto g-3 justify-content-center">
+                <form action="" method="POST" id="studentForm">
+                    {% csrf_token %}
+                    {{ formset.management_form }}
+                    {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    <div
+                        style="color: red;font-family: 'Poppins', sans-serif;font-weight: 600;text-align: center;margin-top: 1rem;">
+                        <h6>{{message}}</h6>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <div class="form-floating" style="font-family: 'Poppins', sans-serif;font-weight: 600;">
+                        <select class="form-select mb-4" id="floatingSelect" aria-label="Floating label select example"
+                            name="dropdown_student">
+                            <option disabled selected="selected">Select Student</option>
+                            {% for student in student_list %}
+                            <option value="{{student.name}}">{{student.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="floatingSelect" style="margin-left: 0;">Select Student:</label>
+                    </div>
+                    <div class="form-floating" style="font-family: 'Poppins', sans-serif;font-weight: 600;">
+                        <select class="form-select mb-4 mt-4" id="floatingSelect student"
+                            aria-label="Floating label select example" name="dropdown_semester">
+                            <option disabled selected="selected">Select Semester</option>
+                            {% for semester in semester_list %}
+                            <option value="{{semester.name}}">{{semester.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="floatingSelect" style="margin-left: 0;">Select Semester:</label>
+                    </div>
+                    <div class="container-md">
+                        <div class="flex-column">
+                            {% for form in formset %}
+                            <div class="row-md mb-4 mr-0"
+                                style="font-family: 'Source Sans Pro', sans-serif; font-weight: 600;">{{ form }}</div>
+                            {% endfor %}
+                            <div class="container-md mb-4" style="width: fit-content;">
+                                <input type="submit" name="Submit" class="btn btn-primary"
+                                    style="font-family: 'Poppins', sans-serif; font-weight: 500;">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

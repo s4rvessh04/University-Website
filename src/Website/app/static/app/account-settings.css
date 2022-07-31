@@ -1,0 +1,20 @@
+body {
+    background: #fff;
+}
+.navbar-brand:hover {
+    opacity: 0.7;
+}
+.navbar {
+    background: #2F363D;
+    border-radius: 0 0 7px 7px;
+}
+.form-control {
+    border-radius: 8px;
+}
+.form-floating {
+    font-weight: 500;
+}
+.my-border {
+    border-radius: 8px;
+}
+

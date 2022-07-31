@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(to right bottom, #C3F3FF, #D09BFF);
+}
+.navbar {
+    background: transparent;
+}
+a {
+    text-decoration: none;
+}
+.top-fluid-container {
+    border-radius: 2vmin;
+    margin: 0 2%;
+    margin-top: 8.7vmin;
+}
+.navbar {
+    background: transparent;
+}
+.glass {
+    background: linear-gradient(to right bottom ,rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+.my-border-sm {
+    border-radius: 10px;
+}
+
+.my-border-m {
+    border-radius: 20px;
+}
+.my-white-bg-low {
+    background: rgba(255,255,255, 0.3);
+}
+.my-white-bg-high {
+    background: rgba(255,255,255, 0.7);
+}
+.gradient-purple {
+    background: -webkit-linear-gradient(0deg, #8F00FF, #9E52B6);
+    -webkit-background-clip: text;
+    background-clip: none;
+    -webkit-text-fill-color: transparent;
+}
+.gradient-pink {
+    background: -webkit-linear-gradient(0deg, #C060A1, #700086);
+    -webkit-background-clip: text;
+    background-clip: none;
+    -webkit-text-fill-color: transparent;
+}

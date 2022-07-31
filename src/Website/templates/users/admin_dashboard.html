@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/dashboard.css' %}">{% endblock %}
+{% block title %}ADMIN | DashBoard{% endblock %}
+{% block nav %}
+<style>
+    .navbar {
+        background: #2F363D;
+        border-radius: 0 0 7px 7px;
+    }
+
+    body {
+        background: #fff;
+    }
+</style>
+<a class="navbar-brand" style="cursor: default;">
+    <p class="h6 poppins" style="font-size: 24px;"><i class="fa fa-cogs text-white" aria-hidden="true"></i></p>
+</a>
+<p class="h6 poppins text-white nav-item" style="font-weight: 600;">DashBoard</p>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+        <li class="nav-item pe-1">
+            <a class="nav-link" style="cursor: default;">
+                <p class="h6 poppins text-white fw-light">Hello {{request.user|upper}}</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'home' %}">
+                <p class="h6 poppins text-white fw-light">Visit Site</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'logout_view' %}" aria-current="page">
+                <p class="h6 poppins text-white" style="display: flex;align-items: center;">
+                    Logout
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="#fff"
+                        class="ms-2">
+                        <path fill-rule="evenodd"
+                            d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 010 1.5h-2.5a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 012 13.25V2.75zm10.44 4.5H6.75a.75.75 0 000 1.5h5.69l-1.97 1.97a.75.75 0 101.06 1.06l3.25-3.25a.75.75 0 000-1.06l-3.25-3.25a.75.75 0 10-1.06 1.06l1.97 1.97z">
+                        </path>
+                    </svg>
+                </p>
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
+
+
+    {% block content %}
+    <div class="jumbotron d-flex align-items-start min-vh-100">
+        <div class="container-fluid pt-lg-0 pt-3" style="margin-top: 1.5%;">
+            <div class="container-xl">
+                <div class="row">
+                    <span class="h6 poppins" style="font-weight: 500;">Quick Links</span>
+                    <div class="col-12 p-0">
+                        <div class="d-lg-flex border p-lg-2 p-0 gap-md-3 align-items-center my-border">
+                            <a href="{% url 'home' %}" class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Homepage</span>
+                            </a>
+                            <a href="{% url 'careers_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Careers</span>
+                            </a>
+                            <a href="{% url 'developers_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Developers</span>
+                            </a>
+                            <a href="{% url 'api_docs_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>API-Docs</span>
+                            </a>
+                            <a href="{% url 'campus_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Campus</span>
+                            </a>
+                            <a href="{% url 'admissions_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Admissions</span>
+                            </a>
+                            <a href="{% url 'placements_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>Placements</span>
+                            </a>
+                            <a href="{% url 'about_view' %}"
+                                class="px-3 py-2 border h6 quick-links my-text-btn m-lg-0 m-1">
+                                <span>About</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" style="height: 530px;height: fit-content;">
+                    <div class="col-md-6 border p-3 my-border">
+                        <span class="h6 poppins"
+                            style="font-weight: 500;color: #2F363D;display: flex; align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20"
+                                fill="#2F363D" class="me-1">
+                                <path fill-rule="evenodd"
+                                    d="M.75 3a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H.75zM3 7.75A.75.75 0 013.75 7h8.5a.75.75 0 010 1.5h-8.5A.75.75 0 013 7.75zm3 4a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75z">
+                                </path>
+                            </svg>
+                            Quick Filter
+                        </span>
+                        <form method="GET" action="" class="mt-4">
+                            <div class="input-group">
+                                <input type="search" class="form-control border" placeholder="Search"
+                                    aria-label="Search" aria-describedby="button-addon2" name="q"
+                                    value="{{request.GET.q}}"
+                                    style="border: none;border-radius: 10px 0 0 10px;font-weight: 600;">
+                                <button class="btn btn-light bg-gradient border" type="submit" id="button-addon2"
+                                    style="color:#2F363D; border: none; border-radius: 0 10px 10px 0;font-weight: 600;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+                                        <path fill-rule="evenodd"
+                                            d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="overflow-auto mt-3 hidden-scroll" style="height:390px;">
+                            <table class="table table-borderless table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="poppins fw-regular" style="color: #2F363D;">User</th>
+                                        <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Name</th>
+                                        <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Group</th>
+                                        <th scope="col" class="poppins fw-regular" style="color: #2F363D;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for user in user_list %}
+                                    <tr>
+                                        <td><span class="h5 inter fs-6 fw-light" style="color: #2F363D;">{{user}}</span>
+                                        </td>
+                                        {% if user.student.name %}
+                                        <td><span class="h5 inter fs-6 fw-light"
+                                                style="color: #2F363D;">{{user.student.name}}</span></td>
+                                        {% elif user.teacher.name %}
+                                        <td><span class="h5 inter fs-6 fw-light"
+                                                style="color: #2F363D;">{{user.teacher.name}}</span></td>
+                                        {% else %}
+                                        <td><span class="h5 inter fs-6 fw-light" style="color: #2F363D;">NNF</span></td>
+                                        {% endif %}
+                                        <td><span class="h5 inter fs-6 fw-light"
+                                                style="color: #2F363D;">{{user.groups.all.0}}</span></td>
+                                        <td><a href="{% url 'viewuser_view' user %}">
+                                                <button type="button"
+                                                    class="btn btn-primary bg-gradient btn-sm">View</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row ps-md-3 mt-md-0 mt-4" style="height: 30%;height: unset;">
+                            <div class="col-lg-7 border px-3 py-2 my-border">
+                                <span class="h6 poppins"
+                                    style="font-weight: 500;color: #2F363D;display: flex; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"
+                                        class="me-1">
+                                        <path fill-rule="evenodd"
+                                            d="M1 5.25a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H1.75A.75.75 0 011 5.25zm0 5.5a.75.75 0 01.75-.75h12.5a.75.75 0 010 1.5H1.75a.75.75 0 01-.75-.75z">
+                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M6.368 1.01a.75.75 0 01.623.859l-2 12.5a.75.75 0 01-1.482-.237l2-12.5a.75.75 0 01.86-.622zm5.5 0a.75.75 0 01.623.859l-2 12.5a.75.75 0 01-1.482-.237l2-12.5a.75.75 0 01.86-.622z">
+                                        </path>
+                                    </svg>
+                                    Count
+                                </span>
+                                <div class="row mt-2 gx-1 gy-1">
+                                    <div class="col-6 p-2 m-0">
+                                        <div class="px-2 py-2 my-border count-text">
+                                            <span class="inter count-txt">Users:</span><span class="dosis count-txt">
+                                                {{user_count}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 p-2 m-0">
+                                        <div class="px-2 py-2 my-border count-text">
+                                            <span class="inter count-txt">Teachers:</span><span class="dosis count-txt">
+                                                {{teacher_count}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 p-2 m-0">
+                                        <div class="px-2 py-2 my-border count-text">
+                                            <span class="inter count-txt">Students:</span><span class="dosis count-txt">
+                                                {{student_count}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 p-2 m-0">
+                                        <div class="px-2 py-2 my-border count-text">
+                                            <span class="inter count-txt">APIusers:</span><span class="dosis count-txt">
+                                                {{apiuser_count}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 p-0 ps-lg-3 mt-lg-0 mt-3">
+                                <div class="border my-border px-3 py-2" style="height: 100%;">
+                                    <span class="h6 poppins"
+                                        style="font-weight: 500;color: #2F363D;display: flex; align-items: center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16"
+                                            height="16">
+                                            <path fill-rule="evenodd"
+                                                d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z">
+                                            </path>
+                                        </svg>
+                                        Options
+                                    </span>
+                                    <div class="row mt-2 gx-1 gy-1">
+                                        <div class="col-12 p-2 m-0">
+                                            <div class="count-text my-text-btn-light my-border">
+                                                <a class="poppins px-2 py-2 h6 quick-links my-text-btn-light m-0"
+                                                    href="/admin">Visit Admin</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 p-2 m-0">
+                                            <div class="count-text my-text-btn-light my-border">
+                                                <a class="poppins px-2 py-2 h6 quick-links my-text-btn-light m-0"
+                                                    href="{% url 'register' %}">Register New User</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ps-md-3">
+                            <div class="col-12 border my-border mt-3" style="height: 100%;">
+                                <span><i class="fa fa-bell-o mb-3 mt-2 fw-bold"
+                                        style="color: #272343b4;font-size: 20px;"></i></span>
+                                <div class="overflow-auto hidden-scroll" style="height: 300px;">
+                                    <div
+                                        class="d-lg-flex d-block justify-content-between notification border mt-lg-2 mt-1 p-md-3 p-2">
+                                        <span>
+                                            <span class="h5 inter"
+                                                style="font-weight: 600;color: #272343;max-width: inherit;">Sender
+                                                Name</span>
+                                            <br>
+                                            <span class="h6 inter text-muted" style="font-weight: 400;">11th Feb 2021
+                                                6:02pm</span>
+                                        </span>
+                                        <div class="btn-group-sm mt-2 mt-0">
+                                            <button type="button"
+                                                class="btn btn-primary bg-gradient notification-btn poppins"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                View
+                                            </button>
+                                            <button type="button"
+                                                class="btn btn-danger bg-gradient notification-btn poppins">Delete</button>
+                                        </div>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title poppins" id="exampleModalLabel"
+                                                            style="color: #272343;">Message</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body inter" style="color: #272343;">
+                                                        <p class="fs-6">This is a message,sed quia non numquam eius modi
+                                                            tempora incidunt ut labore et
+                                                            dolore magnam aliquam quaerat voluptatem.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button"
+                                                            class="message-btn btn btn-outline-primary bg-gradient">Reply</button>
+                                                        <button type="button"
+                                                            class="message-btn btn btn-outline-danger bg-gradient"
+                                                            data-bs-dismiss="modal">Dismiss</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="alert alert-warning" role="alert">
+                        <b>Note:</b> To have a detailed view about the models and users, visit the <a href="/admin"
+                            style="font-size: inherit;font-weight: inherit;color: inherit;font-family: inherit;text-decoration: underline;">"Admin
+                            view"</a>. <b>NNF: </b> No Name Found.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

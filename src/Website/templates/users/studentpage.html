@@ -1,0 +1,353 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/user_view.css' %}">{% endblock %}
+{% block title %}Student's Page{% endblock %}
+{% block nav %}
+<style>
+    body {
+        background: #fff;
+    }
+
+    .navbar {
+        background: #2F363D;
+    }
+</style>
+<a class="navbar-brand" href="{% url 'home' %}">
+    <p class="h6 poppins" style="font-size: 24px;"><i class="fa fa-graduation-cap text-white" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" title="College Home"></i></p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="http://www.unipune.ac.in/">
+                <p class="h6 poppins text-white">Circulars</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'developers_view' %}">
+                <p class="h6 poppins text-white">Developers</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'api_docs_view' %}">
+                <p class="h6 poppins text-white">Docs</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'about_view' %}" aria-current="page">
+                <p class="h6 poppins text-white">About</p>
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+        <div class="dropdown">
+            <button class="my-btn btn p-0 mb-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="{% static 'app/settings-white-24dp.svg' %}" alt="">
+            </button>
+            <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item" href="{% url 'account_settings' %}">
+                        <img class="drop-ico" src="{% static 'app/person-accounts.svg' %}" alt="conference.ico"
+                            width="35px" height="35px" style="margin-right: 0.8rem;">
+                        Account Settings
+                        <p
+                            style="font-size: 10px;font-family: 'Poppins',sans-serif;font-weight: 500;margin-left: 3.1rem;margin-bottom: 0rem;">
+                            {{obj.email}}</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'profile_view' %}">
+                        <img class="drop-ico" src="{% static 'app/user-profile.svg' %}" alt="conference.ico"
+                            width="35px" height="35px" style="margin-right: 0.8rem;">
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img class="drop-ico" src="{% static 'app/status.svg' %}" alt="conference.ico" width="35px"
+                            height="35px" style="margin-right: 0.8rem;">
+                        Set Status
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <img class="drop-ico" src="{% static 'app/round-help-button.svg' %}" alt="conference.ico"
+                            width="35px" height="35px" style="margin-right: 0.8rem;">
+                        Help
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'logout_view' %}">
+                        <img class="drop-ico" src="{% static 'app/log-out.svg' %}" alt="conference.ico" width="35px"
+                            height="35px" style="margin-right: 0.8rem;">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<div class="jumbotron d-flex align-items-start min-vh-100">
+    <div class="container-fluid" style="margin-top: 1.5%;">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-12 text-center options-card my-4 mx-0 p-3 border">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-6 mt-lg-4 mt-0 px-3">
+                            <a href="{% url 'academic-filter' %}">
+                                <h4 class="option-pills option-pills-white my-font-class p-3 border"
+                                    style="color: #2F363D;">
+                                    <span class="material-icons-outlined pe-1">book</span>
+                                    <span>Academic Reports</span>
+                                </h4>
+                            </a>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-6 mt-2 px-3">
+                            <a
+                                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwju9eXN9ITvAhVGeX0KHadJADgQFjAAegQIAhAE&url=https%3A%2F%2Fclassroom.google.com%2F&usg=AOvVaw01ZRE5lsJeswx-yCVeh6SL">
+                                <h4 class="option-pills option-pills-white my-font-class p-3 border"
+                                    style="color: #2F363D;">
+                                    <span class="material-icons-outlined pe-1">assignment</span>
+                                    <span>Work / Submission</span>
+                                </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mb-1">
+                        <div class="col-6 mt-lg-3 mt-1 px-3">
+                            <a href="{% url 'academic-filter' %}">
+                                <div class="option-pills btn-success bg-gradient my-font-class p-2">Extra</div>
+                            </a>
+                        </div>
+                        <div class="col-6 mt-lg-3 mt-1 px-3">
+                            <a href="{% url 'academic-filter' %}">
+                                <div class="option-pills btn-success bg-gradient my-font-class p-2">Extra</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 250px;height: 40vh;">
+                        <div class="col-12 px-3 mb-2">
+                            <div class="px-3 py-2 border text-start mt-lg-4 mt-2 mb-2 hidden-scroll"
+                                style="height: 40vh;border-radius: 10px;font-size: 20px;overflow:auto">
+                                <span><i class="fa fa-bell-o px-1 fw-bold" style="color: #272343b4;"
+                                        data-bs-toggle="tooltip" data-bs-placement="left"
+                                        title="Notifications"></i></span><br>
+                                <div
+                                    class="d-xl-flex d-block justify-content-between notification border mt-lg-2 mt-1 p-md-3 p-2">
+                                    <span>
+                                        <span class="h5 inter"
+                                            style="font-weight: 600;color: #272343;max-width: inherit;">Sender
+                                            Name</span>
+                                        <br>
+                                        <span class="h6 inter text-muted" style="font-weight: 400;">11th Feb 2021
+                                            6:02pm</span>
+                                    </span>
+                                    <div class="btn-group-sm mt-2 mt-0">
+                                        <button type="button"
+                                            class="btn btn-primary bg-gradient notification-btn poppins"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            View
+                                        </button>
+                                        <button type="button"
+                                            class="btn btn-danger bg-gradient notification-btn poppins">Delete</button>
+                                    </div>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title poppins" id="exampleModalLabel"
+                                                        style="color: #272343;">Message</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body inter" style="color: #272343;">
+                                                    <p class="fs-6">This is a message,sed quia non numquam eius modi
+                                                        tempora incidunt ut labore et dolore magnam aliquam quaerat
+                                                        voluptatem.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="message-btn btn btn-outline-primary bg-gradient">Reply</button>
+                                                    <button type="button"
+                                                        class="message-btn btn btn-outline-danger bg-gradient"
+                                                        data-bs-dismiss="modal">Dismiss</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-12 graphs-col my-4 mx-0 px-3 py-2" style="height: 80vh;">
+                    <span>
+                        <h6 class="inter mb-1 float-lg-end float-start"
+                            style="font-weight: 600;color: #2F363D;float: right;"><i
+                                class="fa fa-line-chart  pe-1"></i>Insight</h6>
+                    </span>
+                    <div class="graph-first row mt-5 mx-0 border">
+                        <div class="chart-container"><canvas id="myChart1" height="inherit"></canvas></div>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            var endpoint = '/lineChart/{{request.user}}'
+                            $.ajax({
+                                method: "GET",
+                                url: endpoint,
+                                success: function (data) {
+                                    console.log(data)
+                                    labels = data.labels
+                                    defaultData = data.defaultData
+                                    setChart1()
+                                },
+                                error: function (error_data) {
+                                    console.log(error_data)
+                                    console.log("error")
+                                    console.log(error_data)
+                                }
+                            })
+                        })
+                        function setChart1() {
+                            var ctx = document.getElementById('myChart1');
+                            var chart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: labels,
+                                    datasets: [{
+                                        label: 'Academic Performance (Avg.Marks per semester)',
+                                        backgroundColor: 'rgb(255, 99, 132)',
+                                        borderColor: 'rgb(255, 99, 132)',
+                                        lineTension: 0,
+                                        fill: false,
+                                        data: defaultData
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    legend: {
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                            display: true,
+                                            ticks: {
+                                                beginAtZero: true,
+                                                steps: 20,
+                                                max: 500
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        }
+                    </script>
+                    <div class="row justify-content-center graphs my-4 mx-0 border">
+                        <canvas id="myChart2">
+                        </canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart2');
+                            var chart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ['Sem1', 'Sem2', 'Sem3', 'Sem4', 'Sem5', 'Sem6', 'Sem7', 'Sem8'],
+                                    datasets: [{
+                                        label: 'Attendence (in %) per semester',
+                                        backgroundColor: '#1d7af3',
+                                        borderColor: '#1d7af3',
+                                        fill: false,
+                                        data: [98, 93, 88, 95, 95, 89, 90, 99]
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    legend: {
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                            display: true,
+                                            ticks: {
+                                                beginAtZero: true,
+                                                steps: 20,
+                                                max: 100
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="row justify-content-center graphs my-4 mx-0 border">
+                        <canvas id="myChart3">
+                        </canvas>
+                        <script>
+                            $(document).ready(function () {
+                                var endpoint = '/student-curr-sem-chart/{{request.user}}'
+                                $.ajax({
+                                    method: "GET",
+                                    url: endpoint,
+                                    success: function (data) {
+                                        console.log(data)
+                                        labels = data.labels
+                                        defaultData = data.defaultData
+                                        setChart3()
+                                    },
+                                    error: function (error_data) {
+                                        console.log(error_data)
+                                        console.log("error")
+                                        console.log(error_data)
+                                    }
+                                })
+                            })
+
+                            function setChart3() {
+                                var ctx = document.getElementById('myChart3');
+                                var chart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Performance of ongoing semester',
+                                            backgroundColor: '#FFE4C8',
+                                            borderColor: '#FFA247',
+                                            fill: false,
+                                            data: defaultData,
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        legend: {
+                                        },
+                                        scales: {
+                                            yAxes: [{
+                                                display: true,
+                                                ticks: {
+                                                    beginAtZero: true,
+                                                    steps: 20,
+                                                    max: 100
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

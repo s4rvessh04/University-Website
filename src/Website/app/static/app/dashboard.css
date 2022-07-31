@@ -1,0 +1,55 @@
+a {
+    text-decoration: none;
+}
+.quick-links {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-text-btn:hover {
+    background-color: #f9f9f9;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.075);
+}
+.my-text-btn-light:hover {
+    background: #dbedff85;
+}
+.my-text-btn-light {
+    background-color: #F1F8FF;
+    color: #0366D6;
+}
+.my-text-btn {
+    color: #2F363D;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+.my-border {
+    border-radius: 10px;
+}
+.hidden-scroll::-webkit-scrollbar {
+    display: none;
+}
+.btn-sm{
+    border-radius: 6px;
+}
+.count-text {
+    font-weight: 500;
+    background-color: #E9FFFA;
+}
+.count-txt {
+    color: #00816C;
+}
+.my-btn img:hover {
+    opacity: 0.7;
+}
+.btn-group-sm > .btn, .btn-sm{
+    border-radius: 6px;
+}
+.notification {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.message-btn {
+    border-radius: 8px;
+}

@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(to right bottom, #f6f6f6, #ffe8e8);
+}
+.container-lg {
+    background: linear-gradient(to right bottom, #ffb4b4, #ffe8e8);
+    /* border: 1px solid #ccc; */
+    /* padding: 100px 50px; */
+    /* position: absolute; */
+    /* top: 40%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    box-shadow: 7px 7px 30px 10px #ffe8e8;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
+    height: 50vh;
+    width: 70vw;
+    border-radius: 2vmin;
+    display: flex;
+    justify-content: center;
+
+
+}
+.my-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60vw;
+}
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.developer-register-form-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.form-floating {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    border-radius: 2vh;
+}
+.form-control {
+    border-radius: 1vmin;
+}
+.redirect-link-docs {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 1vmin;
+}
+
+.alert {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border-radius: 1vh;
+}
+.heading-api-registration {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    -webkit-background-clip: text;
+    background-clip: none;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}

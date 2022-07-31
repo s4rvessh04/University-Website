@@ -1,0 +1,401 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/admissions.css' %}">{% endblock %}
+{% block title %}Admissions{% endblock %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'home' %}" style="opacity: 0.8;">
+    <p class="h6 poppins" style="font-size: 24px;"><i class="fa fa-graduation-cap" data-bs-toggle="tooltip"
+            data-bs-placement="bottom" title="Home"></i></p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item pe-1">
+            <a class="nav-link" aria-current="page" href="{% url 'placements_view' %}">
+                <p class="h6 poppins mb-lg-2 mb-0">Placements</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link active" href="{% url 'admissions_view' %}">
+                <p class="h6 poppins mb-lg-2 mb-0">Admissions</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'campus_view' %}">
+                <p class="h6 poppins mb-lg-2 mb-0">Campus</p>
+            </a>
+        </li>
+        <li class="nav-item pe-1">
+            <a class="nav-link" href="{% url 'about_view' %}" aria-current="page">
+                <p class="h6 poppins mb-lg-2 mb-0">About</p>
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav">
+        <li>
+            <a href="{% url 'login_view' %}">
+                <button class="btn btn-primary bg-gradient" type="button" style="border-radius: 0.5rem;">
+                    <p class="h6 poppins m-0" style="font-weight: 600;">Sign In</p>
+                </button>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<div class="jumbotron d-flex align-items-start">
+    <div class="container-fluid pt-lg-0 pt-3 top-fluid-container glass mb-5">
+        <div class="container-xl my-border-m mb-5" style="height: 1352px;height: fit-content;">
+            <div class="row mt-md-5 mt-3 px-xl-0 px-3">
+                <div class="col-lg-5 pe-lg-0 px-0 d-flex flex-column justify-content-center">
+                    <h2 class="gradient-purple fw-bold poppins">Undergraduation Courses</h2>
+                    <p class="text-muted poppins">In id orci sit amet augue faucibus hendrerit in sit amet leo.
+                        Cras imperdiet ullamcorper augue, et sodales metus finibus ut.</p>
+                    <small class="text-black-50 poppins mt-md-4 fw-light">*Bubbles represent batch size.</small>
+                </div>
+                <div class="col-lg-7 px-lg-5 pe-lg-0 px-0 mt-lg-0 mt-4">
+                    <div class="my-white-bg-high my-border-sm px-md-3 px-1 py-md-3 py-1" style="height: 400px;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Engineering
+                                    </th>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Medical
+                                    </th>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Law</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row px-xl-0 px-3" style="margin-top: 14%;">
+                <div class="col-lg-5 pe-lg-0 px-0 d-flex flex-column justify-content-center">
+                    <h2 class="gradient-purple fw-bold poppins">Postgraduation Courses</h2>
+                    <p class="text-muted poppins">In id orci sit amet augue faucibus hendrerit in sit amet leo.
+                        Cras imperdiet ullamcorper augue, et sodales metus finibus ut.</p>
+                    <small class="text-black-50 poppins mt-md-4 fw-light">*Bubbles represent batch size.</small>
+                </div>
+                <div class="col-lg-7 px-lg-5 pe-lg-0 px-0 mt-lg-0 mt-4">
+                    <div class="my-white-bg-high my-border-sm px-md-3 px-1 py-md-3 py-1" style="height: 400px;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Engineering
+                                    </th>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Medical
+                                    </th>
+                                    <th scope="col" class="text-secondary poppins" style="font-weight: 500;">Law</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 1<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 2<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 3<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 4<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Course 5<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron d-flex align-items-start">
+    <div class="container-fluid pt-lg-0 pt-3 top-fluid-container glass" style="margin-bottom: 7%;">
+        <div class="container-xl my-border-m mb-5" style="height: 1352px;height: fit-content;">
+            <div class="row px-xl-0 px-3 mt-5">
+                <div class="col-lg-5 pe-lg-0 px-0 d-flex flex-column justify-content-center">
+                    <h2 class="gradient-pink fw-bold poppins">Masters</h2>
+                    <p class="text-muted poppins">In id orci sit amet augue faucibus hendrerit in sit amet leo.
+                        Cras imperdiet ullamcorper augue, et sodales metus finibus ut.</p>
+                    <small class="text-black-50 poppins mt-md-4 fw-light">*Bubbles represent batch size.</small>
+                    <p class="text-muted poppins mt-md-5 mt-3">Emporibus autem quibusdam et aut officiis debitis aut
+                        rerum necessitatibus saepe eveniet ut et voluptates repudiandae
+                        sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut
+                        reiciendis voluptatibus
+                        maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+                </div>
+                <div class="col-lg-7 px-lg-5 pe-lg-0 px-0 mt-lg-0 mt-4">
+                    <div class="my-white-bg-high my-border-sm px-md-3 px-1 py-md-3 py-1" style="height: fit-content;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <div class="text-secondary poppins h4 px-2 py-1" style="font-weight: 500;">Engineering
+                                </div>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-muted inter">ENTC<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">CS<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">ME<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">IT<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                    <td class="text-muted inter">Electrical<br>
+                                        <div class="px-md-2 px-1 rounded-pill small"
+                                            style="border: 2px solid #7cb0ff;width: fit-content;font-weight: 500;">180
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid my-container-fluid pb-0 mb-0 justify-content-center">
+    <footer class="container-xl">
+        <div class="row my-4 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="footer-h3 text-muted mb-md-0 mb-5 bold-text">College Name</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="footer-h6 mb-3 mb-lg-4 bold-text text-muted"><b>QUICK LINKS</b></h6>
+                        <ul class="list-unstyled footer-ul">
+                            <a class="footer-a footer-menu-links" href="{% url 'home' %}">
+                                <li>Home</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'careers_view' %}">
+                                <li>Careers</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'developers_view' %}">
+                                <li>Developers</li>
+                            </a>
+                            <a class="footer-a footer-menu-links" href="{% url 'about_view' %}">
+                                <li>About</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="footer-h6 mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="footer-p mb-1">605, RATAN ICON BUILDING</p>
+                        <p class="footer-p">SEAWOODS SECTOR</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="footer-p social text-muted mb-0 pb-0 bold-text">
+                            <span class="mx-2" onclick="window.location='#facebook_link'" style="cursor: pointer;"><i
+                                    class="fa fa-facebook" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Facebook page"></i></span>
+                            <span class="mx-2" onclick="window.location='#linkedIn_link'" style="cursor: pointer;"><i
+                                    class="fa fa-linkedin-square" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our LinkedIn"></i></span>
+                            <span class="mx-2" onclick="window.location='#twitter_link'" style="cursor: pointer;"><i
+                                    class="fa fa-twitter" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Twitter"></i></span>
+                            <span class="mx-2" onclick="window.location='#instagram_link'" style="cursor: pointer;"><i
+                                    class="fa fa-instagram" aria-hidden="true" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" title="Visit our Instagram"></i></span>
+                        </p>
+                        <small class="rights">
+                            <span>&#174;</span>
+                            All Rights Reserved.
+                            <br>
+                            Made with <i class="fa fa-coffee" aria-hidden="true"></i> by Sarvesh Rane.
+                        </small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="footer-h6 mt-55 mt-2 text-muted bold-text"><b>COLLEGE EMAIL</b></h6><small><span><i
+                                    class="fa fa-envelope" aria-hidden="true"></i>email@gmail.com</span></small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end ">
+                        <h6 class="footer-h6 text-muted bold-text"><b>CONTACT NUMBER</b></h6><small><span><i
+                                    class="fa fa-phone" aria-hidden="true"></i></span>1234567890</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">{% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/developers.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/footer.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static 'app/home.png' %}">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <title>Developers</title>
+</head>
+
+<body>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <div class="container-fluid my-main-container">
+        <div class="container-lg heading">Developers</div>
+        <div class="container-lg sub-heading">Platform to Integrate, collaborate and achieve</div>
+        <div class="container-lg large-card">
+            <div class="row">
+                <div class="col-12 card-text-top">Want to automate your college data? OR Want to integrate data the way
+                    you want?</div>
+            </div>
+            <div class="row">
+                <div class="col-12 card-text-gradient">Register for our developers program!</div>
+            </div>
+            <div class="row">
+                <div class="col-12 card-text-light">It is our collaborative effort with our fellow students to let the
+                    budding devs enrich their knowledge and creativity towards programming.</div>
+            </div>
+            <div class="row">
+                <div class="col-12 card-choices">
+                    <div class="row long-glass-card">
+                        <div class="col-6 glass-card-item pe-0">
+                            <a class="text-primary links my-border-end" href="{% url 'api_docs_view' %}">Read the
+                                docs</a>
+                        </div>
+                        <div class="col-6 glass-card-item ps-0">
+                            <a class="text-primary links border-start"
+                                href="{% url 'developers_register_view' %}">Register here -></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-container-fluid pb-0 mb-0 justify-content-center">
+        <footer class="container-xl">
+            <div class="row my-4 justify-content-center py-5">
+                <div class="col-11">
+                    <div class="row">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                            <h3 class="footer-h3 text-muted mb-md-0 mb-5 bold-text">College Name</h3>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="footer-h6 mb-3 mb-lg-4 bold-text text-muted"><b>QUICK LINKS</b></h6>
+                            <ul class="list-unstyled footer-ul">
+                                <a class="footer-a footer-menu-links" href="{% url 'home' %}">
+                                    <li>Home</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'careers_view' %}">
+                                    <li>Careers</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'developers_view' %}">
+                                    <li>Developers</li>
+                                </a>
+                                <a class="footer-a footer-menu-links" href="{% url 'about_view' %}">
+                                    <li>About</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="footer-h6 mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                            <p class="footer-p mb-1">605, RATAN ICON BUILDING</p>
+                            <p class="footer-p">SEAWOODS SECTOR</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                            <p class="footer-p social text-muted mb-0 pb-0 bold-text">
+                                <span class="mx-2" onclick="window.location='#facebook_link'"
+                                    style="cursor: pointer;"><i class="fa fa-facebook" aria-hidden="true"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        title="Visit our Facebook page"></i></span>
+                                <span class="mx-2" onclick="window.location='#linkedIn_link'"
+                                    style="cursor: pointer;"><i class="fa fa-linkedin-square" aria-hidden="true"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        title="Visit our LinkedIn"></i></span>
+                                <span class="mx-2" onclick="window.location='#twitter_link'" style="cursor: pointer;"><i
+                                        class="fa fa-twitter" aria-hidden="true" data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom" title="Visit our Twitter"></i></span>
+                                <span class="mx-2" onclick="window.location='#instagram_link'"
+                                    style="cursor: pointer;"><i class="fa fa-instagram" aria-hidden="true"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        title="Visit our Instagram"></i></span>
+                            </p>
+                            <small class="rights">
+                                <span>&#174;</span>
+                                All Rights Reserved.
+                                <br>
+                                Made with <i class="fa fa-coffee" aria-hidden="true"></i> by Sarvesh Rane.
+                            </small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                            <h6 class="footer-h6 mt-55 mt-2 text-muted bold-text"><b>COLLEGE EMAIL</b></h6>
+                            <small><span><i class="fa fa-envelope" aria-hidden="true"></i>email@gmail.com</span></small>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end ">
+                            <h6 class="footer-h6 text-muted bold-text"><b>CONTACT NUMBER</b></h6><small><span><i
+                                        class="fa fa-phone" aria-hidden="true"></i></span>1234567890</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>

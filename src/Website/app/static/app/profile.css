@@ -1,0 +1,29 @@
+body {
+    background: #fff;
+    color: #2F363D;
+}
+
+.navbar {
+    background: #2F363D;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.navbar-brand:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.field-main {
+    font-weight: 600;
+}
+.field-description {
+    font-weight: 300;
+}
+.my-border {
+    border-radius: 10px;
+}

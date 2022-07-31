@@ -1,0 +1,227 @@
+body {
+    margin: 0px;
+    background: linear-gradient(to right bottom, #CAFCEF, #A8F1E2);
+}
+
+.container_main {
+    background: #FFFFFF;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.6),rgba(255,255,255,0.4));
+    height: 544px;
+    width: 375px;
+    /* border-image-source: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3)); */
+    border-radius: 1rem;
+    top: 160px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px 20px;
+    box-shadow: 7px 7px 10px 5px #A8F1E2;
+}
+
+.unicaplogo {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    top: 32.8px;
+    filter: drop-shadow(5px 5px 10px #CAFCEF);
+}
+
+h1 {
+    position: relative;
+    font-size: 19.2px;
+    font-family: 'Source Sans Pro', sans-serif;
+    top: 40px;
+    text-align: center;
+}
+
+form {
+    position: relative;
+    display: block;
+    top: 5em;
+}
+
+label {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    color: #0278AE;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+
+}
+a#forgotpass {
+    float: right;
+    line-height: 2.4;
+    float: right;
+}
+
+.password_block {
+    display: flex;
+    margin: 0px;
+    justify-content: right;
+}
+
+.input_box {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    height: 32px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3)); */
+    /* border: 1px solid #ccc;   */
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#login_btn {
+    position: relative;
+    background: #4ECCA3;
+    margin-top: 25px;
+    width: 100%;
+    height: 37px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+#login_btn:hover {
+    background: #23c48e;
+}
+a#contactadmin {
+    position: relative;
+    bottom: -22%;
+    font-weight: 300;
+}
+
+p {
+    display: block;
+    height: fit-content;
+    margin-block: 0px;
+}
+
+/* Create Student css (Inherited)*/
+
+.student_form_container_main {
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 800px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px 20px;
+}
+
+#submit_btn {
+    position: relative;
+    background: #4ECCA3;
+    margin-top: 20px;
+    width: 100%;
+    height: 37px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#error {
+    position: relative;
+    top: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    marker: none;
+    font-size: 14px;
+    color: #e63946;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* register specific CSS */
+
+input {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    height: 32px;
+    width: 100%;
+    opacity: 0.8;
+    /* border: 1px solid #ccc; */
+    /* border: 2px solid transparent;
+    border-image-source: linear-gradient(to right bottom, rgba(255,255,255,0.7),rgba(255,255,255,0.3));
+    border-image-slice: 1; */
+    border: transparent;
+    box-shadow: 4px 2px 12px 3px #a8f1e2cb;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    padding: 5px 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+form {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+a#contactadmin_register {
+    position: relative;
+    bottom: -8%;
+    font-weight: 300;
+}
+
+#flash_message {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: limegreen;
+    position: relative;
+    text-align: center;
+    top: 3em;
+}
+
+ul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+}
+
+.checkbox {
+    position: relative;
+    width: 20px; 
+    height: 20px;
+    margin: 0px;
+    top: 4px;
+    left: 10px;
+    margin: auto;
+}
+

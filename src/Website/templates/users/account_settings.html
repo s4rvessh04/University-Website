@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/account-settings.css' %}">{% endblock %}
+{% block title %}{{request.user|upper}} | Account Settings{% endblock %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'user_view' %}">
+    <p class="h6 poppins text-white" style="font-size: 24px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="#fff">
+            <path fill-rule="evenodd"
+                d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z">
+            </path>
+        </svg>
+        <span class="fs-5">Back</span>
+    </p>
+</a>
+{% endblock %}
+{% block content %}
+<div class="jumbotron d-flex align-items-start min-vh-100">
+    <div class="container-fluid" style="margin-top: 4.5%;">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {% for message in messages %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        <div class="alert alert-danger" role="alert" style="margin: 1vmin 0;">
+                            {{message}}
+                        </div>
+                        {% else %}
+                        <div class="alert alert-success" role="alert" style="margin: 1vmin 0;">
+                            {{message}}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div class="form-floating mb-3 inter text-muted">
+                            {{form.username}}
+                            <label for="floatingInput">{{form.username.label}}</label>
+                        </div>
+                        <div class="form-floating mb-3 inter text-muted">
+                            {{form.password}}
+                            <label for="floatingInput">{{form.password.label}}</label>
+                        </div>
+                        <div class="d-md-block d-flex justify-content-center">
+                            <button class="btn btn-primary bg-gradient inter my-border" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 mt-md-5 mt-3">
+                    <div class="alert alert-info my-border m-0" role="alert" style="margin: 1vmin 0;">
+                        <p class="ssp fw-bold">
+                            In order to change any of:
+                        <ul>
+                            <li>Username</li>
+                            <li>Password</li>
+                            <li>Both</li>
+                        </ul>
+                        <span class="ssp fw-bold">Fill out the field and submit.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+{% block title %}Details | {{user}}{% endblock %}
+{% block nav %}
+<a class="navbar-brand" href="{% url 'user_view' %}">
+    <p class="h6 poppins" style="font-size: 24px;color: #24294E">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="#24294E">
+            <path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z">
+            </path>
+        </svg>
+        <span class="fs-5 fw-bold">Back</span>
+    </p>
+</a>
+<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #fff;">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
+    <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+            <span class="nav-link poppins fw-bold" aria-current="page" style="color: #24294E;">Details of {{user}}</span>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<style>
+    .card-prop {
+        box-shadow: 5px 5px 12px 6px rgba(65, 170, 168, 0.25);
+        background: linear-gradient(to right bottom, rgba(255,255,255,0.8),rgba(255,255,255,0.4));
+        border-radius: 10px;
+    }
+    .my-container {
+        top: 53%;
+    }
+    body {
+        background: linear-gradient(to right bottom, #b5ffed, #c1fef0, #cdfdf3, #d8fbf5, #e4faf6);
+    }
+    .navbar {
+        background: transparent;
+    }
+    a:hover {
+        opacity: 0.8;
+    }
+</style>
+<div class="container-xl my-5">
+    <div class="row justify-content-between">
+        <div class="col-lg-4 col-12 px-3 pb-2">
+            <div class="p-4 card-prop" style="height: 100%;">
+                {% if user.student.name %}
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Name:  <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.student.name}}</span></span>
+                </div>
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Email: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.email}}</span></span>
+                </div>
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Branch: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.student.branch}}</span></span>
+                </div>
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Phone Number: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.student.phone}}</span></span>
+                </div>
+                {% elif user.teacher.name %}
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Name: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.teacher.name}}</span></span>
+                </div>
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Email: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.email}}</span></span>
+                </div>
+                <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                    <span>Phone Number: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.teacher.phone}}</span></span>
+                </div>
+                {% else %}
+                    <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                        <span>Username: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user}}</span></span>
+                    </div>
+                    <div class="row py-3 " style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                        <span>Email: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">{{user.email}}</span></span>
+                    </div>
+                {% endif %}
+                <div class="d-flex align-items-end" style="height: 35vh;">
+                    <div class="d-md-flex flex-column" style="width: 100%;">
+                        <div class="d-md-flex" style="font-size: 18px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                            <span>Last Login</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">
+                                Date: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 300;">{{user.last_login.date}}</span>
+                            </span>
+                            <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400; margin-right: 2rem;">
+                                Time: <span style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 300;">{{user.last_login.time}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="row px-3 mt-2" style="height: 31px;border-radius: 8px;">
+                <div class="col-md-4 card-prop" style="font-size: 18px;line-height: 1.8rem;text-align: center;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;background: linear-gradient(to right bottom, #4bbea7ad, #41AAA8);color: #fff;box-shadow: 2px 2px 8px 6px rgba(65, 170, 168, 0.2);">
+                    Academic Performance
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-5 px-3 py-2" style="height: 46.3vh;">
+                    <div class="card-prop p-3" style="height: 100%;">
+                        {% if current_sem_list == None%}<p>No data</p>
+                        {% else %}
+                        <span style="font-family: 'Poppins', sans-serif;font-weight: 600;font-size: 18px;padding: 0 0 0 .5rem;">This Semesters
+                        </span>
+                        <div class="overflow-auto" style="height:35vh;margin: 0 0 .7rem 0;">
+                            <table class="table table-borderless" style="margin-bottom: .5rem;">
+                                <thead>
+                                    <tr style="font-size: 15px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                                        <td>Subjects</td>
+                                        <td style="float: right;">Marks</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for marks in current_sem_list %}
+                                    <tr style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400; padding: 0 0 .5rem 0;">
+                                        <td style="padding: 0 0 .2rem .5rem;">{{marks.subject}}</td>
+                                        <td style="float: right;margin-right: .5rem;padding: 0 0 .2rem .5rem;">{{marks.marks}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <div style="margin-bottom: .2rem;">
+                                <span style="font-size: 16px;font-family: 'Poppins', sans-serif;font-weight: 600; padding: 0 0 .5rem 0;">
+                                    <span style="padding: 0 0 .2rem .5rem;">TOTAL:</span>
+                                    <span style="float: right;margin-right: .5rem;padding: 0 0 .2rem .5rem;">{{current_sem_TOTAL}}/{{current_sem_GRAND_TOTAL}}</span>
+                                </span>
+                                </div>
+                            <div style="margin-bottom: .2rem;">
+                                <span style="font-size: 16px;font-family: 'Poppins', sans-serif;font-weight: 600; padding: 0 0 .5rem 0;">
+                                    <span style="padding: 0 0 .2rem .5rem;">PERCENTAGE:</span>
+                                    <span style="float: right;margin-right: .5rem;padding: 0 0 .2rem .5rem;">{{current_sem_PERCENTAGE}}%</span>
+                                </span>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-7 px-3 py-2" style="height: 46.3vh;">
+                    <div class="card-prop p-3" style="height: 100%;">
+                        {% if not all_sems %}
+                            <p>No data</p>
+                        {% else %}
+                            <span style="font-family: 'Poppins', sans-serif;font-weight: 600;font-size: 18px;padding: 0 0 0 .5rem;">All Semesters</span>
+                            <div class="overflow-auto" style="height:35vh;margin: 0 0 .7rem 0;">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr style="font-size: 16px;font-family: 'Poppins', sans-serif;font-weight: 600;">
+                                            <td>Semesters</td>
+                                            <td style="float: right;">Marks</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for key, value in all_sems.items %}
+                                        <tr style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;font-weight: 400;">
+                                            <td style="padding: 0 0 .2rem .5rem;">{{key}}</td>
+                                            <td style="float: right;padding: 0 0 .2rem .5rem;margin-right: .5rem">{{value}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div style="margin-bottom: .2rem;">
+                                    <span style="font-size: 16px;font-family: 'Poppins', sans-serif;font-weight: 600; padding: 0 0 .5rem 0;">
+                                        <span style="padding: 0 0 .2rem .5rem;">TOTAL:</span>
+                                        <span style="float: right;margin-right: .5rem;padding: 0 0 .2rem .5rem;">{{all_sems_GRAND_TOTAL}}</span>
+                                    </span>
+                                </div>
+                                <div style="margin-bottom: .2rem;">
+                                    <span style="font-size: 16px;font-family: 'Poppins', sans-serif;font-weight: 600; padding: 0 0 .5rem 0;">
+                                        <span style="padding: 0 0 .2rem .5rem;">PERCENTAGE:</span>
+                                        <span style="float: right;margin-right: .5rem;padding: 0 0 .2rem .5rem;">{{all_sems_PERCENTAGE}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row px-3" style="height: 20.5vh;">
+                <div class="col-md-12 card-prop" style="height: 19.5vh;">
+                    <canvas id="chart"></canvas>
+                    <script>
+                        $(document).ready(function () {
+                            var endpoint = '/lineChart/{{user}}'
+                            $.ajax({
+                                method: "GET",
+                                url: endpoint,
+                                success: function (data) {
+                                    console.log(data)
+                                    labels = data.labels
+                                    defaultData = data.defaultData
+                                    setChart()
+                                },
+                                error: function (error_data) {
+                                    console.log(error_data)
+                                    console.log("error")
+                                    console.log(error_data)
+                                }
+                            })
+                        })
+                        function setChart() {
+                            var ctx = document.getElementById('chart');
+                            var chart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: labels,
+                                    datasets: [{
+                                        label: 'All Semesters',
+                                        backgroundColor: '#FFE4C8',
+                                        borderColor: '#FFA247',
+                                        fill: false,
+                                        data: defaultData,
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    legend: {
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                            display: true,
+                                            ticks: {
+                                                beginAtZero: true,
+                                                stepSize: 100,
+                                                max: 500
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
