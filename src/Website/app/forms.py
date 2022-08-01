@@ -35,16 +35,17 @@ class CreateUserForm(UserCreationForm):
         attrs={'class': 'form-control', 'id': 'floatingInput', 'placeholder': 'Confirm Password'}))
     is_teacher = forms.BooleanField(required=False, label='Teacher', widget=forms.CheckboxInput(
         attrs={'class': 'form-check-input', 'id': 'flexCheckDefault', 'value': False}))
-    choices_branch = [(branch, branch)for branch in Branch.objects.all()]
+    
+    # choices_branch = [(branch, branch) for branch in Branch.objects.all()]
     # added the defualt option if the user type is not student
-    choices_branch.insert(0, ('None', '-------'))
-    branch = forms.ChoiceField(required=False, choices=choices_branch,
-                               initial='None', widget=forms.Select(attrs={'class': 'form-select'}))
+    # choices_branch.insert(0, ('None', '-------'))
+    # branch = forms.ChoiceField(required=False, choices=choices_branch,
+    #                            initial='None', widget=forms.Select(attrs={'class': 'form-select'}))
+    branch = forms.ModelChoiceField(required=False, queryset=Branch.objects.all(),widget=forms.Select(attrs={'class': 'form-select'}))
 
     class Meta:
         model = User
-        fields = ['name', 'username', 'email', 'phone',
-                  'branch', 'is_teacher', 'password1', 'password2']
+        fields = ['name', 'username', 'email', 'phone', 'branch', 'is_teacher', 'password1', 'password2']
 
 
 class UpdateUserDetails(forms.ModelForm):
